@@ -1,0 +1,73 @@
+@use "./custom" as *;
+@use "./mixin" as *;
+
+body {
+  box-sizing: border-box;
+}
+
+.contact-form {
+  //min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.gradient {
+  background: linear-gradient(
+    to right,
+    rgba($primary, 0.95),
+    rgba($secondary, 0.95)
+  );
+}
+
+.display-3 {
+  font-family: "Poppins", sans-serif;
+
+  &--title {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    font-weight: 600;
+    display: inline-block;
+    font-family: "Poppins", sans-serif;
+    background-image: linear-gradient(to right, $primary, $secondary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.cta-info {
+  padding: 3rem;
+  margin: 1rem 0;
+
+  &__list {
+    position: relative;
+    list-style: none;
+    display: block;
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+    margin-bottom: 0.7rem;
+  }
+
+  li::before {
+    content: "\2713";
+    font-weight: 600;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+.form {
+  padding: 1rem;
+
+  @include media-breakpoint-up(lg) {
+    padding: 3rem;
+  }
+
+  button {
+    border: none;
+    color: $white;
+  }
+}
